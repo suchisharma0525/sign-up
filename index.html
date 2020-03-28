@@ -5,6 +5,34 @@
     <title>Sign in</title>
 	
     <style>
+	   table {
+    border-spacing: 0px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+thead {
+    background-color: powderblue;
+}
+
+tbody td {
+    background-color: #cdd4e2c2;
+}
+
+tr:nth-child(even) {
+    background-color: #e0e6d1c2;
+} 
+	    
 	.main-div-sign-in {
     width: 80%;
     height: 480px;
@@ -120,8 +148,20 @@ margin-top:40px;
         </thead>
         <tbody>
             <tr>
-                <td id="saved_username">suchisharma0525@gmail.com</td>
-                <td id="saved_password">1234</td>
+                <td id="saved_username1">suchisharma0525@gmail.com</td>
+                <td id="saved_password1">1234</td>
+            </tr>
+			<tr>
+                <td id="saved_username2">suchi@gmail.com</td>
+                <td id="saved_password2">12</td>
+            </tr>
+			<tr>
+                <td id="saved_username3">sharma0525@gmail.com</td>
+                <td id="saved_password3">1234aa</td>
+            </tr>
+			<tr>
+                <td id="saved_username4">sharma0525@gmail.com</td>
+                <td id="saved_password4">aa</td>
             </tr>
         </tbody>
     </table>
@@ -130,8 +170,17 @@ margin-top:40px;
 function signIn() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var saved_username = document.getElementById("saved_username").textContent;
-    var saved_password = document.getElementById("saved_password").textContent;
+    var saved_username1 = document.getElementById("saved_username1").textContent;
+    var saved_password1 = document.getElementById("saved_password1").textContent;
+	
+	var saved_username2 = document.getElementById("saved_username2").textContent;
+    var saved_password2 = document.getElementById("saved_password2").textContent;
+	
+	var saved_username3 = document.getElementById("saved_username3").textContent;
+    var saved_password3 = document.getElementById("saved_password3").textContent;
+	
+	var saved_username4 = document.getElementById("saved_username4").textContent;
+    var saved_password4 = document.getElementById("saved_password4").textContent;
 
 
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
@@ -140,9 +189,11 @@ function signIn() {
         document.getElementById("invalid-username").textContent = "Enter correct email format !";
     } else {
         document.getElementById("invalid-username").textContent = "";
-        if (username == saved_username && password == saved_password) {
-            document.getElementById("success-message").innerHTML = "You have successfully login !";
-        } else {
+        if (username == saved_username1 || username == saved_username2 || username == saved_username3 || username == saved_username4) {
+			if(password == saved_password1 || password == saved_password2 || password == saved_password3 || password == saved_password4 ){
+               document.getElementById("success-message").innerHTML = "You have successfully login !";
+			    }
+        } else{
             document.getElementById("success-message").innerHTML = "Username or password in incorrect";
         }
     }
