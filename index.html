@@ -140,7 +140,7 @@ function signIn() {
         document.getElementById("invalid-username").textContent = "Enter correct email format !";
     } else {
         document.getElementById("invalid-username").textContent = "";
-        if (username == saved_username) {
+        if (username == saved_username && password == saved_password) {
             document.getElementById("success-message").innerHTML = "You have successfully login !";
         } else {
             document.getElementById("success-message").innerHTML = "Username or password in incorrect";
